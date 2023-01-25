@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: Roboto, open sans, lato, source sans pro;
+}
+
+#app {
+    background: linear-gradient(to bottom, #21c9b5 20%, #e0dacf 20%);
+    height: 100vh;
+    padding-top: 5vh;
+}
+
+#boolzapp {
+    width: 90%;
+    margin: 0 auto;
+    height: 90vh;
+    display: flex;
+}
+
+.users {
+    width: 35%;
+    height: 100%;
+}
+
+.users > header {
+    border-right: 1px solid rgb(208, 206, 206);
+}
+
+.chat {
+    width: 65%;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    background-color: #eaeaea;
+}
+
+.users {
+    background-color: white;
+}
+
+.user-box, .button-box {
+    display: flex;
+    align-items: center;
+}
+
+.user-box {
+    width: 50px;
+    height: 50px;
+    padding-top: 6px;
+    padding-left: 3px;
+}
+
+.user-box > img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.user-box > div:last-child {
+    margin-left: 8px;
+}
+
+.button-box > i {
+    margin-right: 14px;
+    color: black;
+    font-size: 20px;
+    color: #b1b1b1;
+}
+
+.notifiche_new_msg {
+    height: 70px;
+    background-color: #90d9ff;
+}
+
+.notifiche-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+.notifiche-box > div:last-child {
+    margin-left: 6px;
+}
+
+.notifiche-box > div:first-child > i  {
+    border-radius: 50%;
+    background-color: white;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    padding-top: 12px;
+    font-size: 20px;
+    color: #90d9ff;
+}
+
+.notifiche-box > div:last-child > p {
+    text-decoration:underline;
+    color: #74a9bf;
+}
+
+.contacts-users > form > .search-users {
+    display: flex;
+    padding: 6px;
+    background-color: rgba(249,249,249,255);
+}
+
+.search-users > div:first-child {
+    background-color: #f0eaea;
+    padding: 5px;
+    width: 60px;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 6px;
+}
+
+.search-users > div:last-child > input {
+    padding: 7px;
+    width: 380px;
+    background-color: #f0eaea;;
+    border: none;
+}
+
+.list-users {
+    overflow: scroll;
+    height: 480px;
+}
+
+.list-users > ul {
+    list-style-type: none;
+}
+
+.list-users > ul > li {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgb(235, 231, 231);
+}
+
+.list-users > ul > li:hover {
+    background-color: #e9ebeb;
+    cursor: pointer;
+}
+
+.list-users > ul > li > div:first-child {
+    width: 45px;
+    height: 45px;
+    margin: 8px;
+}
+
+.list-users > ul > li > div:first-child > img {
+    width: 100%;
+    border-radius: 100%;
+}
+
+.list-users > ul > li > div:last-child {
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.list-users > ul > li > div:last-child > h5 {
+    color: black;
+    font-size: 17px;
+}
+
+.list-users > ul > li > div:last-child > p {
+    color: #c7cacc;
+}
+
+
+
+/* INIZIO PARTE CHAT */
+
+main {
+    background-image: url(../img/mine.jpg);
+    height: 83%;
+}
+
+.chat {
+    height: 100%;
+}
+
+.chat_msg {
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
+    padding-top: 30px;
+}
+
+.chat_msg > .green {
+    width: 35%;
+    padding: 7px;
+    border-radius: 8px;
+    background-color: #d7f9b3;
+    margin-left: 470px;
+    margin-top: 10px;
+}
+.chat_msg > .white {
+    text-align: left;
+    width: 35%;
+    padding: 7px;
+    border-radius: 8px;
+    background-color: white;
+    margin-top: 10px;
+
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #e8e3e0;
+    height: 8.3%;
+}
+
+footer > div:first-child > i{
+    font-size: 18px;
+    margin-left: 10px;
+    color: #9ba2a7;
+}
+footer > div:last-child > i {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #9ba2a7;
+}
+
+footer > .write_msg {
+    width: 80%;
+}
+
+.write_msg > input {
+    width: 100%;
+    padding: 15px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: none;
+}

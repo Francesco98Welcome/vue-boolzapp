@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue BoolzApp</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia&family=Dongle&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+</head>
+<body>
+    
+
+    <div id="app">
+
+        <!-- applicazione -->
+
+
+        <!-- SEZIONE CONTATTI -->
+
+        <div id="boolzapp">
+            <div class="users">
+                <header>
+                    <div class="user-box">
+                        <img src="img/avatar_io.jpg" alt="user-avatar">
+                        <div>Frank</div>
+                    </div>
+                    <div class="button-box">
+                        <i class="icon fas fa-circle-notch"></i>
+                        <i class="icon fas fa-comment-alt"></i>
+                        <i class="icon fas fa-ellipsis-v"></i>
+                    </div>
+                </header>
+
+                <div class="notifiche_new_msg">
+                    <div class="notifiche-box">
+                        <div><i class="fa-solid fa-bell"></i></div>
+                        <div>
+                            <h4>Ricevi notfiche di nuovi messaggi</h4>
+                            <p>Attiva notifiche desktop</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contacts-users">
+                    <form action="">
+                        <div class="search-users">
+                            <div>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            </div>
+                        </div>
+
+                        <div class="list-users">
+                            <ul>
+                                <li v-for="(singleUser,index) in contacts">
+                                    <div class="img-user">
+                                        <img :src="'img/avatar' + contacts[index].avatar + '.jpg'"/>
+                                    </div>
+                                    <div>
+                                        <h5>{{singleUser.name}}</h5>
+                                        <p>Ultimo messaggio inviato</p>
+                                    </div>
+                                </li>
+<!--
+                                <li>
+                                    <div class="img-user">
+                                        <img src="img/avatar_2.jpg" alt="">
+                                    </div>
+                                    <div>
+                                        <h5>Fabio</h5>
+                                        <p>Ultimo messaggio inviato</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="img-user">
+                                        <img src="img/avatar_3.jpg" alt="">
+                                    </div>
+                                    <div>
+                                        <h5>Samuele</h5>
+                                        <p>Ultimo messaggio inviato</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="img-user">
+                                        <img src="img/avatar_4.jpg" alt="">
+                                    </div>
+                                    <div>
+                                        <h5>Alessandro B.</h5>
+                                        <p>Ultimo messaggio inviato</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="img-user">
+                                        <img src="img/avatar_5.jpg" alt="">
+                                    </div>
+                                    <div>
+                                        <h5>Alessandro L.</h5>
+                                        <p>Ultimo messaggio inviato</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="img-user">
+                                        <img src="img/avatar_6.jpg" alt="">
+                                    </div>
+                                    <div>
+                                        <h5>Claudia</h5>
+                                        <p>Ultimo messaggio inviato</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="img-user">
+                                        <img src="img/avatar_7.jpg" alt="">
+                                    </div>
+                                    <div>
+                                        <h5>Federico</h5>
+                                        <p>Ultimo messaggio inviato</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="img-user">
+                                        <img src="img/avatar_8.jpg" alt="">
+                                    </div>
+                                    <div>
+                                        <h5>Davide</h5>
+                                        <p>Ultimo messaggio inviato</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="img-user">
+                                        <img src="img/avatar_8.jpg" alt="">
+                                    </div>
+                                    <div>
+                                        <h5>Davide</h5>
+                                        <p>Ultimo messaggio inviato</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="img-user">
+                                        <img src="img/avatar_8.jpg" alt="">
+                                    </div>
+                                    <div>
+                                        <h5>Davide</h5>
+                                        <p>Ultimo messaggio inviato</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="img-user">
+                                        <img src="img/avatar_8.jpg" alt="">
+                                    </div>
+                                    <div>
+                                        <h5>Davide</h5>
+                                        <p>Ultimo messaggio inviato</p>
+                                    </div>
+                                </li>
+                            -->
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- FINE SEZIONE CONTATTI -->
+
+
+            <!-- SEZIONE CHAT -->
+
+            <div class="chat">
+                <header>
+                    <div class="user-box">
+                        <img src="img/avatar_1.jpg" alt="user-avatar">
+                        <div>Michele</div>
+                    </div>
+                    <div class="button-box">
+                        <i class="icon fas fa-circle-notch"></i>
+                        <i class="icon fas fa-comment-alt"></i>
+                        <i class="icon fas fa-ellipsis-v"></i>
+                    </div>
+                </header>
+
+                <main>
+                    <div class="chat_msg">
+                        <div class="green sent">
+                            <p v-for="(element,index) in contacts">
+                                {{}}
+                            </p>
+                        </div>
+                        <div class="white">oiii</div>
+                    </div>
+                </main>
+
+                <footer>
+                    <div><i class="fa-regular fa-face-smile"></i></div>
+                    <div class="write_msg">
+                        <input type="text" placeholder="Scrivi messaggio..">
+                    </div>
+                    <div><i class="fa-solid fa-microphone"></i></div>
+                </footer>
+            </div>
+
+            <!-- FINE SEZIONE CHAT -->
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
