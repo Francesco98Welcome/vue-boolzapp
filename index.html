@@ -61,16 +61,17 @@
 
                         <div class="list-users">
                             <ul>
-                                <li v-for="(singleUser,index) in contacts">
-                                    <div class="img-user">
-                                        <img :src="'img/avatar' + contacts[index].avatar + '.jpg'"/>
+                                <li v-for="(singleUser,index) in contacts" @click="activeChat(index)">
+                                    <div class="img-user" >
+                                        <img :src="'img/avatar' + contacts[index].avatar + '.jpg'">
                                     </div>
                                     <div>
                                         <h5>{{singleUser.name}}</h5>
                                         <p>Ultimo messaggio inviato</p>
                                     </div>
                                 </li>
-<!--
+
+<!-- struttura utenti html commentata
                                 <li>
                                     <div class="img-user">
                                         <img src="img/avatar_2.jpg" alt="">
@@ -185,11 +186,15 @@
             <div class="chat">
                 <header>
                     <div class="user-box">
-                        <img src="img/avatar_1.jpg" alt="user-avatar">
-                        <div>Michele</div>
+                        <img :src="'img/avatar' + contacts[currentChat].avatar + '.jpg'" 
+                             :alt="'avatar' + contacts[currentChat].avatar">
+                        <div class="name_contact">
+                            {{contacts[currentChat].name}}
+                            <p class="lastAccess">Ultimo accesso oggi alle 12:00</p>
+                        </div>
                     </div>
                     <div class="button-box">
-                        <i class="icon fas fa-circle-notch"></i>
+                        <i class="fa-solid fa-magnifying-glass"></i>
                         <i class="icon fas fa-comment-alt"></i>
                         <i class="icon fas fa-ellipsis-v"></i>
                     </div>
@@ -197,19 +202,22 @@
 
                 <main>
                     <div class="chat_msg">
-                        <div class="green sent">
-                            <p v-for="(element,index) in contacts">
-                                {{}}
+                        <div v-for="mex in contacts[currentUser].messages"
+                                    :class="(mex.status == 'sent') ? 'sent' : 'received'">
+                            <p>
+                                {{mex.message}}
                             </p>
+                            <div class="date">
+                                16:15
+                            </div>
                         </div>
-                        <div class="white">oiii</div>
                     </div>
                 </main>
 
                 <footer>
                     <div><i class="fa-regular fa-face-smile"></i></div>
-                    <div class="write_msg">
-                        <input type="text" placeholder="Scrivi messaggio..">
+                    <div class="write_msg" @keyup.enter="addText(currentUser), answer(currentUser)">
+                        <input type="text" placeholder="Scrivi messaggio.." v-model="newMex">
                     </div>
                     <div><i class="fa-solid fa-microphone"></i></div>
                 </footer>

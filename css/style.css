@@ -7,7 +7,7 @@
 }
 
 #app {
-    background: linear-gradient(to bottom, #21c9b5 20%, #e0dacf 20%);
+    background: linear-gradient(to bottom, #188f81 20%, #e0dacf 20%);
     height: 100vh;
     padding-top: 5vh;
 }
@@ -54,6 +54,15 @@ header {
     height: 50px;
     padding-top: 6px;
     padding-left: 3px;
+}
+
+.name_contact {
+    flex-shrink: 0;
+}
+
+.lastAccess {
+    font-size: 14px;
+    color: rgb(159, 156, 156);
 }
 
 .user-box > img {
@@ -129,7 +138,7 @@ header {
 }
 
 .list-users {
-    overflow: scroll;
+    overflow-y: auto;
     height: 480px;
 }
 
@@ -181,6 +190,7 @@ header {
 main {
     background-image: url(../img/mine.jpg);
     height: 83%;
+    overflow-y: auto;
 }
 
 .chat {
@@ -194,7 +204,12 @@ main {
     padding-top: 30px;
 }
 
-.chat_msg > .green {
+.date {
+    font-size: 8px;
+    text-align: right;
+}
+
+.chat_msg > .sent {
     width: 35%;
     padding: 7px;
     border-radius: 8px;
@@ -202,14 +217,13 @@ main {
     margin-left: 470px;
     margin-top: 10px;
 }
-.chat_msg > .white {
+.chat_msg > .received {
     text-align: left;
     width: 35%;
     padding: 7px;
     border-radius: 8px;
     background-color: white;
     margin-top: 10px;
-
 }
 
 footer {
@@ -220,7 +234,7 @@ footer {
     height: 8.3%;
 }
 
-footer > div:first-child > i{
+footer > div:first-child > i {
     font-size: 18px;
     margin-left: 10px;
     color: #9ba2a7;
