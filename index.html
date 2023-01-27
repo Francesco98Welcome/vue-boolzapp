@@ -17,7 +17,7 @@
 <body>
     
 
-    <div id="app">
+    <div id="app"> <!-- collegamento vue -->
 
         <!-- applicazione -->
 
@@ -55,13 +55,13 @@
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
                             <div>
-                                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                                <input type="text" v-model="searchValue"  placeholder="Cerca o inizia una nuova chat">
                             </div>
                         </div>
 
                         <div class="list-users">
                             <ul>
-                                <li v-for="(singleUser,index) in contacts" @click="activeChat(index)">
+                                <li v-for="(singleUser,index) in filteredContacts" :key="index" @click="activeChat(index)">
                                     <div class="img-user" >
                                         <img :src="'img/avatar' + contacts[index].avatar + '.jpg'">
                                     </div>
@@ -70,7 +70,6 @@
                                         <p>Ultimo messaggio inviato</p>
                                     </div>
                                 </li>
-
 <!-- struttura utenti html commentata
                                 <li>
                                     <div class="img-user">
@@ -186,10 +185,10 @@
             <div class="chat">
                 <header>
                     <div class="user-box">
-                        <img :src="'img/avatar' + contacts[currentChat].avatar + '.jpg'" 
-                             :alt="'avatar' + contacts[currentChat].avatar">
+                        <img :src="'img/avatar' + contacts[currentUser].avatar + '.jpg'" 
+                             :alt="'avatar' + contacts[currentUser].avatar">
                         <div class="name_contact">
-                            {{contacts[currentChat].name}}
+                            {{contacts[currentUser].name}}
                             <p class="lastAccess">Ultimo accesso oggi alle 12:00</p>
                         </div>
                     </div>
@@ -204,6 +203,7 @@
                     <div class="chat_msg">
                         <div v-for="mex in contacts[currentUser].messages"
                                     :class="(mex.status == 'sent') ? 'sent' : 'received'">
+                                <!-- :class='mex.satus' -->
                             <p>
                                 {{mex.message}}
                             </p>

@@ -5,9 +5,9 @@ createApp({
         return {
 
             currentUser: 0,
-            currentChat: 0,
             newMex: '',
             hourMex: '',
+            searchValue: '',
 
             contacts: [
                 {
@@ -180,8 +180,6 @@ createApp({
 
         activeChat(index){
             this.currentUser = index;
-            console.log('ciao');
-            return this.currentChat = index;
         },
 
         addText(currentUser) {
@@ -191,10 +189,10 @@ createApp({
                 status: "sent",
             });
                 this.newMex = "";
+
         },
 
         answer(currentUser) {
-
             setTimeout(() => {
                 this.contacts[currentUser].messages.push({
                 date: "10/01/2020 15:50:00",
@@ -202,7 +200,17 @@ createApp({
                 status: "received",
             })
             }, 1000)
-           
         },
+        
     },
+
+    computed: {
+        filteredContacts() {
+            if(this.searchValue.trim().length > 0) {
+                // console.log(this.searchValue)
+                return this.contacts.filter((singleUser) => singleUser.name.toLowerCase().includes(this.searchValue.toLowerCase().trim()))
+            }
+            return this.contacts
+        }
+    }
 }).mount('#app')
