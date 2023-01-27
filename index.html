@@ -63,7 +63,7 @@
                             <ul>
                                 <li v-for="(singleUser,index) in filteredContacts" @click="activeChat(index)">
                                     <div class="img-user" >
-                                        <img :src="'img/avatar' + contacts[index].avatar + '.jpg'">
+                                        <img :src="'img/avatar' + filteredContacts[index].avatar + '.jpg'">
                                     </div>
                                     <div class="name-mezzogiorno">
                                        <h5>{{singleUser.name}}</h5>                        
