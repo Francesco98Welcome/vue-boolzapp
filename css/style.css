@@ -171,14 +171,27 @@ header {
 .list-users > ul > li > div:last-child {
     font-size: 15px;
     margin-left: 10px;
+    width: 80%;
 }
 
 .list-users > ul > li > div:last-child > h5 {
     color: black;
     font-size: 17px;
+    display: inline-block;
 }
 
 .list-users > ul > li > div:last-child > p {
+    color: #c7cacc;
+}
+
+.name-mezzogiorno {
+    position: relative;
+}
+.mezzogiorno {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 14px;
     color: #c7cacc;
 }
 

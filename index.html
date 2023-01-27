@@ -61,13 +61,14 @@
 
                         <div class="list-users">
                             <ul>
-                                <li v-for="(singleUser,index) in filteredContacts" :key="index" @click="activeChat(index)">
+                                <li v-for="(singleUser,index) in filteredContacts" @click="activeChat(index)">
                                     <div class="img-user" >
                                         <img :src="'img/avatar' + contacts[index].avatar + '.jpg'">
                                     </div>
-                                    <div>
-                                        <h5>{{singleUser.name}}</h5>
-                                        <p>Ultimo messaggio inviato</p>
+                                    <div class="name-mezzogiorno">
+                                       <h5>{{singleUser.name}}</h5>                        
+                                       <p>Ultimo messaggio inviato</p>
+                                       <div class="mezzogiorno">12:00</div>
                                     </div>
                                 </li>
 <!-- struttura utenti html commentata
