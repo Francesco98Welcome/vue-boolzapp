@@ -178,11 +178,17 @@ createApp({
 
     methods: {
 
+        // Metodo per impostare l'indice dell'utente corrente
+
         activeChat(index){
             this.currentUser = index;
         },
 
+        // Metodo per aggiungere un nuovo messaggio alla chat corrente
+        
         addText(currentUser) {
+            
+            // Aggiunge un nuovo oggetto messaggio all'array messages dell'utente corrente
             this.contacts[currentUser].messages.push({
                 date: "10/01/2020 15:50:00",
                 message: this.newMex,
@@ -191,7 +197,9 @@ createApp({
                 this.newMex = "";
 
         },
-
+        
+        // Metodo per inviare una risposta automatica dall'utente corrente dopo un secondo
+        
         answer(currentUser) {
             setTimeout(() => {
                 this.contacts[currentUser].messages.push({
@@ -203,13 +211,21 @@ createApp({
         },
         
     },
-
+    
     computed: {
         filteredContacts() {
+            
+            // Controlla se la stringa di ricerca contiene almeno un carattere diverso da uno spazio
+            
             if(this.searchValue.trim().length > 0) {
-                // console.log(this.searchValue)
+                
+                // Filtra gli elementi dell'array contatti (this.contacts) in base al nome dell'utente
+                // La ricerca è case-insensitive, cioè non fa distinzione tra lettere maiuscole e minuscole
                 return this.contacts.filter((singleUser) => singleUser.name.toLowerCase().includes(this.searchValue.toLowerCase().trim()))
             }
+            
+            // Se la stringa di ricerca è vuota, restituisce l'array di contatti originale
+            
             return this.contacts
         }
     }
